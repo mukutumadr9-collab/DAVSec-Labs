@@ -1,8 +1,8 @@
-\# Windows IAM — Least Privilege and NTFS Permissions
+# Windows IAM — Least Privilege and NTFS Permissions
 
 
 
-\## Project Overview
+## Project Overview
 
 
 
@@ -18,7 +18,7 @@ The exercise was completed in a Windows 11 virtual machine as part of DAVSec Lab
 
 
 
-\## Business Scenario
+## Business Scenario
 
 
 
@@ -34,31 +34,31 @@ The task was to review the existing permissions, remove unnecessary access, and 
 
 
 
-\## Lab Environment
+## Lab Environment
 
 
 
-\- Windows 11 virtual machine
+- Windows 11 virtual machine
 
-\- Oracle VirtualBox
+- Oracle VirtualBox
 
-\- Windows PowerShell
+- Windows PowerShell
 
-\- NTFS file-system permissions
+- NTFS file-system permissions
 
-\- ICACLS command-line utility
-
-
-
-\## Technical Implementation
+- ICACLS command-line utility
 
 
 
-\### 1. User Account Configuration
+## Technical Implementation
 
 
 
-Created a standard Windows account named `davsec\_employee`.
+### 1. User Account Configuration
+
+
+
+Created a standard Windows account named `davsec_employee`.
 
 
 
@@ -66,7 +66,7 @@ Verified that the account was enabled and was not a member of the local Administ
 
 
 
-\### 2. Protected Directory Creation
+### 2. Protected Directory Creation
 
 
 
@@ -74,7 +74,7 @@ Created the directory:
 
 
 
-`C:\\DAVSec-Confidential`
+`C:\DAVSec-Confidential`
 
 
 
@@ -82,7 +82,7 @@ This directory represented a location requiring restricted access.
 
 
 
-\### 3. Initial Permission Assessment
+### 3. Initial Permission Assessment
 
 
 
@@ -94,9 +94,9 @@ The assessment identified inherited permissions assigned to broad security group
 
 
 
-\- BUILTIN\\Users
+- BUILTIN\Users
 
-\- NT AUTHORITY\\Authenticated Users
+- NT AUTHORITY\Authenticated Users
 
 
 
@@ -104,7 +104,7 @@ These permissions were inconsistent with the intended restricted-access configur
 
 
 
-\### 4. Permission Remediation
+### 4. Permission Remediation
 
 
 
@@ -120,13 +120,13 @@ The resulting ACL retained Full Control permissions for:
 
 
 
-\- BUILTIN\\Administrators
+- BUILTIN\Administrators
 
-\- NT AUTHORITY\\SYSTEM
+- NT AUTHORITY\SYSTEM
 
 
 
-\### 5. Access Validation
+### 5. Access Validation
 
 
 
@@ -134,7 +134,7 @@ Tested directory access using the standard employee account.
 
 
 
-The access attempt returned an \*\*Access Denied\*\* error.
+The access attempt returned an **Access Denied** error.
 
 
 
@@ -146,7 +146,7 @@ These results confirmed that the intended access restrictions were functioning.
 
 
 
-\## Security Outcome
+## Security Outcome
 
 
 
@@ -158,19 +158,19 @@ The implementation reinforced the importance of access-control reviews, least-pr
 
 
 
-\## Supporting Documentation
+## Supporting Documentation
 
 
 
-\- \[PowerShell Implementation](scripts/Windows-IAM-Least-Privilege.ps1)
+- [PowerShell Implementation](scripts/Windows-IAM-Least-Privilege.ps1)
 
-\- \[Access Validation](documentation/Access-Validation.md)
+- [Access Validation](documentation/Access-Validation.md)
 
-\- \[Lab Screenshots](screenshots/)
+- [Lab Screenshots](screenshots/)
 
 
 
-\## Skills Demonstrated
+## Skills Demonstrated
 
 
 
